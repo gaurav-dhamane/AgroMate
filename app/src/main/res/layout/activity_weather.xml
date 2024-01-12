@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e8f4f8"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rel_top"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@drawable/top_bg">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:src="@drawable/image" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rel_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rel_mid"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etCity"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/input_filler"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Enter Location"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textColorHint="#6A6767" />
+
+            <EditText
+                android:id="@+id/etCountry"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/etCity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_filler"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Enter Country Code (Optional)"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textColorHint="#6A6767" />
+
+            <Button
+                android:id="@+id/btnGet"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etCountry"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_filler"
+                android:onClick="getWeatherDetails"
+                android:text="Get Weather"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@null" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp">
+
+        <RelativeLayout
+            android:id="@+id/rel_bottom"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/black" />
+            </ScrollView>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECFFDC"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rel_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_notselect">
+
+        <TextView
+            android:id="@+id/mCameraButton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_select"
+            android:gravity="center"
+            android:text="@string/buttonTakePhoto"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/mGalleryButton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/mCameraButton"
+            android:gravity="center"
+            android:text="@string/buttonSelectPhoto"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/mPhotoImageView"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_below="@id/rel_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/descriptionImage"
+        app:srcCompat="@android:color/darker_gray" />
+
+
+    <Button
+        android:id="@+id/mDetectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mPhotoImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/buttonDiagnose" />
+
+    <TextView
+        android:id="@+id/mResultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mDetectButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/defaultImage"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/learn_more_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mResultTextView"
+        android:layout_centerHorizontal="true"
+        android:text="Learn more"
+        android:textColor="#1E90FF"
+        android:visibility="invisible">
+
+    </TextView>
+
+</RelativeLayout>
